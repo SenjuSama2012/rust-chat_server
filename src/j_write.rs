@@ -31,9 +31,6 @@ impl<S, I, W> Future for JWrite<S, W>
     type Item = ();
     type Error = ();
     fn poll(&mut self) -> Result <Async<Self::Item>, Self::Error> {
-        type Item = ();
-        type Error = ();
-        fn poll_err(&mut self) -> Result<Async<Self::Error>{
             loop {
                 match self.buff {
                     None => {
@@ -53,8 +50,7 @@ impl<S, I, W> Future for JWrite<S, W>
                             self.buff = Some(v.split_off(n));
                         }
                     }
-                }
-            }
+                }            
         }
     }
 }

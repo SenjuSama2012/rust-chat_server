@@ -10,7 +10,7 @@ mod j_read;
 mod j_write;
 
 fn main() {
-    let addr = "127.0.0.1:8088".parse().unwrap();
+    let addr = "127.0.0.1:5500".parse().unwrap();
     let lis = TcpListener::bind(&addr).expect("Could not bind address");
 
         let fut = lis.incoming().for_each(|sock| {
