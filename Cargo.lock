@@ -82,12 +82,23 @@ checksum = "baf1de4339761588bc0619e3cbc0120ee582ebb74b53b4efbf79117bd2da40fd"
 name = "chat_server"
 version = "0.1.0"
 dependencies = [
+ "chatbox",
  "failure",
  "futures",
  "serde",
  "serde_derive",
  "serde_json",
  "tokio",
+ "tokio-channel",
+]
+
+[[package]]
+name = "chatbox"
+version = "0.1.0"
+dependencies = [
+ "futures",
+ "tokio",
+ "tokio-channel",
 ]
 
 [[package]]
@@ -550,6 +561,15 @@ dependencies = [
  "tokio-timer",
  "tokio-udp",
  "tokio-uds",
+]
+
+[[package]]
+name = "tokio-channel"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "530d0fb87416dd531600f7cccc438bb35c5b91883065c9e6dca7cdecee991cfa"
+dependencies = [
+ "futures",
 ]
 
 [[package]]
